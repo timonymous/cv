@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Timothé Visbecq</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" type="image/png">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #007acc;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .item {
+      position: relative;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .item:hover {
+      background-color: #f0f8ff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .tooltip {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background-color: #007acc;
+      color: #fff;
+      padding: 8px;
+      border-radius: 5px;
+      width: 250px;
+      z-index: 10;
+      font-size: 0.9em;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .item:hover .tooltip,
+    .item.active .tooltip {
+      display: block;
+      opacity: 1;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+      .tooltip {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Timothé Visbecq</h1>
+    <p>Technicien Informatique & Communication Numérique</p>
+    <p>Téléphone : 06 10 72 34 98 | Email : visbecqtimothe@gmail.com</p>
+    <p>Âge : 23 ans | Permis B | Véhicule personnel</p>
+  </div>
+
+  <div class="section">
+    <h2>Profil</h2>
+    <div class="item">Passionné par l'informatique et fort de 3 années d'études, je suis une personne investie et sérieuse. Ma passion pour l'innovation et mon assiduité m'ont permis de maîtriser des compétences en développement web et communication numérique. À la recherche de nouvelles opportunités pour mettre en valeur mes compétences et contribuer au succès de votre service informatique.</div>
+  </div>
+
+  <div class="section">
+    <h2>Diplômes et Formations</h2>
+    <div class="item">Baccalauréat économique et social - Lycée Paul Claudel, Laon (2017-2020)
+      <div class="tooltip">Formation généraliste axée sur l'économie et les sciences sociales.</div>
+    </div>
+    <div class="item">BTS SIO option SLAM - Lycée Paul Claudel, Laon (2020-2023)
+      <div class="tooltip">Maîtrise de PHP, SQL, CSS, C#, HTML, Frontend, Backend, Symfony, méthode Agile, rédaction de cahiers des charges.</div>
+    </div>
+    <div class="item">Licence Professionnelle Conception et Développement d'Applications Web et Mobile - Inset Saint-Quentin (2023-2024)
+      <div class="tooltip">Création de serveurs Apache2 sur Ubuntu, développement web (PHP, HTML, CSS, SQL), développement mobile Android.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Expériences Professionnelles</h2>
+    <div class="item">Stage Développement Application Web - Entreprise de Wicona, Courmelles (06/2021 - 07/2021)
+      <div class="tooltip">Réalisation d'une application permettant de numériser la réalisation de l'état des lieux.</div>
+    </div>
+    <div class="item">Stage Développement Application Web - Entreprise de Wicona, Courmelles (01/2022 - 02/2022)
+      <div class="tooltip">Continuation de l'application de l'état des lieux développée précédemment.</div>
+    </div>
+    <div class="item">Chargé de Communication Numérique - Communauté de Communes (2023-2024)
+      <div class="tooltip">Gestion du site internet institutionnel, création de contenus numériques, support informatique interne aux services.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Compétences</h2>
+    <div class="item">C#
+      <div class="tooltip">Développement backend, applications Windows.</div>
+    </div>
+    <div class="item">PHP
+      <div class="tooltip">Développement d'applications web dynamiques.</div>
+    </div>
+    <div class="item">Backend
+      <div class="tooltip">Développement serveur et bases de données.</div>
+    </div>
+    <div class="item">Frontend
+      <div class="tooltip">Développement d'interfaces utilisateurs en HTML/CSS.</div>
+    </div>
+    <div class="item">Dépannage Informatique
+      <div class="tooltip">Assistance aux utilisateurs, maintenance matérielle et logicielle.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Langues</h2>
+    <div class="item">Français
+      <div class="tooltip">Langue maternelle.</div>
+    </div>
+    <div class="item">Anglais
+      <div class="tooltip">Niveau intermédiaire.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Centres d'Intérêt</h2>
+    <div class="item">Les réseaux sociaux
+      <div class="tooltip">Principalement Twitter, veille technologique et numérique.</div>
+    </div>
+    <div class="item">Les nouvelles technologies
+      <div class="tooltip">Principalement l'intelligence artificielle et son évolution.</div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.item').forEach(item => {
+      item.addEventListener('click', function() {
+        document.querySelectorAll('.item').forEach(i => {
+          if (i !== item) i.classList.remove('active');
+        });
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
